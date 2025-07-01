@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Road to Redemption: Digital Prospectus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .nav-section {
+            margin-bottom: 25px;
+        }
+
+        .nav-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 8px;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 8px 0;
+            color: #495057;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            padding-left: 12px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: #2c5aa0;
+            border-left-color: #2c5aa0;
+            background: rgba(44, 90, 160, 0.05);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .author-info {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #e9ecef;
+            margin-top: 20px;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2c5aa0, #4a90e2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .author-name {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .author-title {
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #2c5aa0 0%, #4a90e2 100%);
+            color: white;
+            border-radius: 12px;
+            margin: -40px -40px 50px -40px;
+        }
+
+        .hero-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .hero-meta {
+            font-size: 0.95em;
+            opacity: 0.8;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .section-number {
+            background: #2c5aa0;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 1px solid #f39c12;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .quote-box {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5aa0;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .quote-box::before {
+            content: '"';
+            font-size: 3em;
+            color: #2c5aa0;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .method-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+        }
+
+        .method-title {
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #2c5aa0, #4a90e2);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #2c5aa0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 20px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2c5aa0;
+        }
+
+        .definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .definition-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #2c5aa0;
+        }
+
+        .definition-term {
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 8px;
+        }
+
+        .research-question {
+            font-size: 1.3em;
+            color: #2c5aa0;
+            font-weight: bold;
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 2px solid #2c5aa0;
+        }
+
+        .expandable-section {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .expandable-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .expandable-header:hover {
+            background: #e9ecef;
+        }
+
+        .expandable-content {
+            padding: 20px;
+            display: none;
+        }
+
+        .expandable-content.active {
+            display: block;
+        }
+
+        .expand-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .expand-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        .theoretical-framework {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .theory-card {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 1px solid #2196f3;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .theory-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .theory-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .theory-author {
+            font-size: 0.9em;
+            color: #424242;
+            margin-bottom: 15px;
+        }
+
+        .biblio-category {
+            margin-bottom: 30px;
+        }
+
+        .biblio-title {
+            font-weight: bold;
+            color: #2c5aa0;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .biblio-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #2c5aa0;
+        }
+
+        .citation {
+            margin-bottom: 8px;
+        }
+
+        .citation-note {
+            font-size: 0.9em;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .gap-analysis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .gap-card {
+            background: #fff5f5;
+            border: 1px solid #f56565;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .gap-title {
+            font-weight: bold;
+            color: #c53030;
+            margin-bottom: 10px;
+        }
+
+        .interactive-note {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.9em;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-note:hover {
+            background: #bbdefb;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .hero-title {
+                font-size: 2em;
+            }
+            
+            .methodology-grid, .theoretical-framework, .gap-analysis {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="nav-section">
+                <div class="nav-title">Navigation</div>
+                <a href="#title" class="nav-item active">Title & Rationale</a>
+                <a href="#research-question" class="nav-item">Research Question</a>
+                <a href="#literature" class="nav-item">Literature Review</a>
+                <a href="#methodology" class="nav-item">Methodology</a>
+                <a href="#feasibility" class="nav-item">Feasibility</a>
+                <a href="#attractiveness" class="nav-item">Attractiveness</a>
+                <a href="#ethics" class="nav-item">Ethical Framework</a>
+                <a href="#timeline" class="nav-item">Timeline</a>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-title">Resources</div>
+                <a href="#definitions" class="nav-item">Key Definitions</a>
+                <a href="#bibliography" class="nav-item">Bibliography</a>
+                <a href="#theoretical" class="nav-item">Theoretical Framework</a>
+            </div>
+
+            <div class="author-info">
+                <div class="author-avatar">RH</div>
+                <div class="author-name">Robert Hudson</div>
+                <div class="author-title">Doctoral Candidate<br>Arcadia University</div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">The Road to Redemption</h1>
+                <p class="hero-subtitle">An Autoethnographic and Phenomenological Study of Resilience and Higher Education in Post-Incarceration Reintegration</p>
+                <p class="hero-meta">Dissertation Prospectus | Arcadia University | June 2025</p>
+            </div>
+
+            <section id="definitions" class="section">
+                <div class="section-header">
+                    <div class="section-number">0</div>
+                    <h2 class="section-title">Key Definitions</h2>
+                </div>
+
+                <div class="definitions-grid">
+                    <div class="definition-card">
+                        <div class="definition-term">Post-incarceration reintegration</div>
+                        <p>The complex, ongoing process through which formerly incarcerated individuals navigate the transition from correctional facilities back into community settings, involving practical, psychological, social, and identity-based adjustments that extend beyond immediate reentry needs.</p>
+                    </div>
+                    <div class="definition-card">
+                        <div class="definition-term">Meaning-making</div>
+                        <p>The active, interpretive process through which individuals construct understanding and significance from their experiences, transforming events into coherent narratives that inform identity, decision-making, and future action.</p>
+                    </div>
+                    <div class="definition-card">
+                        <div class="definition-term">Educational resilience</div>
+                        <p>The capacity to persist, adapt, and thrive academically despite encountering systemic barriers, institutional exclusions, and personal challenges. Unlike general resilience, educational resilience specifically encompasses the development of academic identity, learning strategies, and institutional navigation skills.</p>
+                    </div>
+                    <div class="definition-card">
+                        <div class="definition-term">Identity reconstruction</div>
+                        <p>The deliberate process of reformulating one's sense of self, moving beyond stigmatized or criminalized identities toward self-authored narratives that integrate past experiences with future aspirations.</p>
+                    </div>
+                    <div class="definition-card">
+                        <div class="definition-term">Justice-impacted individuals</div>
+                        <p>People who have experienced direct contact with the criminal justice system, including incarceration, community supervision, or other forms of correctional involvement. This term is preferred over "ex-offender" or "former criminal" as it centers the impact of systems rather than defining individuals by past actions.</p>
+                    </div>
+                    <div class="definition-card">
+                        <div class="definition-term">Self-authorship</div>
+                        <p>The capacity to internally define one's beliefs, identity, and relationships rather than relying on external authorities or social expectations. In post-incarceration contexts, self-authorship represents the reclamation of agency and the development of internally-generated life direction.</p>
+                    </div>
+                    <div class="definition-card">
+                        <div class="definition-term">Critical resilience</div>
+                        <p>A framework that reframes resilience not as individual adaptation to adverse circumstances, but as resistance to systems that create adversity in the first place. Critical resilience emphasizes collective action and systemic change rather than purely individual coping strategies.</p>
+                    </div>
+                    <div class="definition-card">
+                        <div class="definition-term">Autoethnography</div>
+                        <p>A qualitative research methodology that combines autobiographical writing with ethnographic inquiry, using personal experience as a lens for understanding broader cultural and social phenomena. This approach positions the researcher's lived experience as legitimate scholarly data.</p>
+                    </div>
+                    <div class="definition-card">
+                        <div class="definition-term">Transformative learning</div>
+                        <p>Mezirow's theory describing the process through which adults critically examine and revise their assumptions, beliefs, and perspectives, leading to fundamental shifts in understanding and behavior. This learning involves critical reflection, discourse, and action.</p>
+                    </div>
+                    <div class="definition-card">
+                        <div class="definition-term">Systemic barriers</div>
+                        <p>Institutional policies, practices, and cultural norms that systematically exclude or disadvantage formerly incarcerated individuals, including educational policies, employment restrictions, housing limitations, and social stigma embedded within organizational structures.</p>
+                    </div>
+                    <div class="definition-card">
+                        <div class="definition-term">Phenomenological research</div>
+                        <p>A qualitative methodology focused on understanding the lived experiences and essential meanings of phenomena as experienced by individuals, emphasizing the subjective, first-person perspective of participants.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="title" class="section">
+                <div class="section-header">
+                    <div class="section-number">1</div>
+                    <h2 class="section-title">Title and Rationale</h2>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Title:</strong> The Road to Redemption: An Autoethnographic and Phenomenological Study of Resilience and Higher Education in Post-Incarceration Reintegration
+                </div>
+
+                <p>This title reflects the central themes of resilience, identity reconstruction, and the transformative role of higher education for formerly incarcerated individuals. The metaphor of "the road" acknowledges both the journey-based nature of reintegration and the ongoing process of meaning-making that characterizes post-incarceration life.</p>
+
+                <div class="quote-box">
+                    "Redemption" here is not positioned as a moral imperative requiring formerly incarcerated individuals to earn their place in society, but rather as a reclamation of agency and self-authorship through educational engagement.
+                </div>
+
+                <p>The title prioritizes scholarly clarity over creative flair while signaling the multi-method approach grounded in qualitative inquiry that will drive this investigation. The coupling of autoethnography and phenomenology in the subtitle indicates the study's commitment to both personal narrative and broader experiential analysis.</p>
+
+                <p>This methodological pairing reflects the understanding that individual meaning-making occurs within larger social and systemic contexts, and that the researcher's positionality as a formerly incarcerated scholar adds both depth and complexity to the inquiry. The title thus establishes the study's theoretical foundation while positioning it within the broader landscape of transformative education research and critical reintegration studies.</p>
+            </section>
+
+            <section id="research-question" class="section">
+                <div class="section-header">
+                    <div class="section-number">2</div>
+                    <h2 class="section-title">Central Research Question</h2>
+                </div>
+
+                <div class="research-question">
+                    How do formerly incarcerated individuals make meaning of their higher education experiences as a means of navigating systemic barriers, fostering resilience, and reconstructing identity?
+                </div>
+
+                <p>This question drives the study and invites layered responses that operate across multiple dimensions of experience and analysis. At its core, the question seeks to understand the interpretive processes through which formerly incarcerated individuals transform educational encounters into tools for personal and social navigation.</p>
+
+                <div class="methodology-grid">
+                    <div class="method-card">
+                        <div class="method-title">Agency-Centered Approach</div>
+                        <p>The emphasis on "meaning-making" positions participants as active agents in their own transformation rather than passive recipients of educational intervention, aligning with critical pedagogical frameworks that privilege agency and self-determination.</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-title">Complex Recognition</div>
+                        <p>The question's complexity lies in its recognition that higher education functions simultaneously as a site of opportunity and exclusion for formerly incarcerated individuals.</p>
+                    </div>
+                </div>
+
+                <p>While educational attainment can provide practical benefits—employment prospects, social capital, cognitive skill development—the subjective experience of pursuing education while managing stigma, stereotypes, and systemic barriers requires deeper investigation. How individuals make meaning of these challenges and develop resilience through educational engagement varies significantly based on personal histories, identities, and interpretive frameworks.</p>
+
+                <div class="highlight-box">
+                    <strong>Phenomenological Focus:</strong> The question allows for phenomenological exploration of how individuals internalize, resist, and reshape educational experiences to serve their reintegration goals, while also inviting autoethnographic reflection on the researcher's own parallel journey.
+                </div>
+
+                <p>By foregrounding resilience and identity reconstruction, the question acknowledges that post-incarceration education is never merely academic but always involves fundamental questions of self-concept, belonging, and future possibility. This framing moves beyond traditional metrics of educational success to examine how learning becomes a vehicle for psychological healing, social reconnection, and narrative transformation in the lives of justice-impacted individuals.</p>
+            </section>
+
+            <section id="literature" class="section">
+                <div class="section-header">
+                    <div class="section-number">3</div>
+                    <h2 class="section-title">Relationship to Previous Scholarship</h2>
+                </div>
+
+                <p>Scholarship on education and reentry often focuses on recidivism rates or program effectiveness, neglecting how individuals internalize and interpret their educational journeys post-incarceration. This quantitative emphasis, while valuable for policy development, fails to capture the nuanced psychological and social processes that characterize educational transformation for justice-impacted populations.</p>
+
+                <div class="gap-analysis">
+                    <div class="gap-card">
+                        <div class="gap-title">Quantitative Focus Gap</div>
+                        <p>Current research emphasizes measurable outcomes rather than subjective experience and meaning-making processes.</p>
+                    </div>
+                    <div class="gap-card">
+                        <div class="gap-title">Researcher-Subject Distance</div>
+                        <p>Traditional studies examine formerly incarcerated students as subjects of inquiry rather than co-constructors of knowledge.</p>
+                    </div>
+                    <div class="gap-card">
+                        <div class="gap-title">Deficit-Based Approaches</div>
+                        <p>Existing scholarship often focuses on barriers and deficits rather than assets, agency, and expertise of formerly incarcerated learners.</p>
+                    </div>
+                    <div class="gap-card">
+                        <div class="gap-title">Limited Insider Perspectives</div>
+                        <p>Few studies privilege narrative and subjective meaning-making or center the voices of formerly incarcerated scholars themselves.</p>
+                    </div>
+                </div>
+
+                <p>Researchers like Honeywell (2018) and Runell (2021) have begun to examine self-transformation through higher education, but few studies privilege narrative and subjective meaning-making as primary data sources or center the voices of formerly incarcerated scholars themselves.</p>
+
+                <div class="highlight-box">
+                    <strong>Study Contribution:</strong> This study addresses that gap by employing a multi-method qualitative design that centers lived experience—both my own and that of peers—to explore how resilience and identity evolve through educational engagement.
+                </div>
+
+                <div class="expandable-section">
+                    <div class="expandable-header" onclick="toggleExpand(this)">
+                        <strong>Literature Review Expansion Plan</strong>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <h4>Required Literature Categories</h4>
+                        
+                        <div class="gap-analysis">
+                            <div class="gap-card">
+                                <div class="gap-title">A. Quantitative Studies on Post-Incarcerated Students</div>
+                                <p><strong>Need to find:</strong> Studies measuring "success" through completion rates, GPA, employment outcomes, recidivism reduction</p>
+                                <p><strong>Purpose:</strong> Show how current research focuses on measurable outcomes rather than subjective experience</p>
+                                <p><strong>Search terms:</strong> "formerly incarcerated students completion rates," "higher education recidivism," "post-secondary education criminal justice outcomes"</p>
+                            </div>
+                            <div class="gap-card">
+                                <div class="gap-title">B. Deficit-Model Studies</div>
+                                <p><strong>Need to find:</strong> Research focusing on barriers, challenges, deficits, and problems faced by formerly incarcerated students</p>
+                                <p><strong>Purpose:</strong> Contrast with asset-based approach that centers agency and expertise</p>
+                                <p><strong>Search terms:</strong> "barriers formerly incarcerated students," "challenges ex-offender higher education"</p>
+                            </div>
+                            <div class="gap-card">
+                                <div class="gap-title">C. Traditional Researcher-Subject Studies</div>
+                                <p><strong>Need to find:</strong> Studies where formerly incarcerated individuals are studied "on" rather than "with"</p>
+                                <p><strong>Purpose:</strong> Highlight how insider-researcher approach differs methodologically</p>
+                            </div>
+                            <div class="gap-card">
+                                <div class="gap-title">D. Program Effectiveness Studies</div>
+                                <p><strong>Need to find:</strong> Evaluations of specific programs or interventions for justice-impacted students</p>
+                                <p><strong>Purpose:</strong> Show focus on institutional perspectives rather than student meaning-making</p>
+                            </div>
+                        </div>
+
+                        <h4>Database Search Plan</h4>
+                        <ul>
+                            <li><strong>Primary databases:</strong> ERIC, PsycINFO, Criminal Justice Abstracts, Sociological Abstracts</li>
+                            <li><strong>Secondary sources:</strong> Google Scholar for grey literature, dissertation databases</li>
+                            <li><strong>Time frame:</strong> Focus on studies from 2010-present for current landscape</li>
+                            <li><strong>Geographic scope:</strong> Primarily US-based studies given different justice systems internationally</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="theoretical" class="section">
+                <div class="section-header">
+                    <div class="section-number">3A</div>
+                    <h2 class="section-title">Theoretical Framework</h2>
+                </div>
+
+                <p>This study is grounded in multiple theoretical frameworks that work together to provide a comprehensive lens for understanding educational meaning-making in post-incarceration contexts.</p>
+
+                <div class="theoretical-framework">
+                    <div class="theory-card">
+                        <div class="theory-title">Resilience Theory</div>
+                        <div class="theory-author">Luthar et al., 2000</div>
+                        <p>Provides the conceptual framework for understanding how protective factors and adaptive processes operate in post-incarceration contexts.</p>
+                    </div>
+                    <div class="theory-card">
+                        <div class="theory-title">Transformative Learning Theory</div>
+                        <div class="theory-author">Mezirow, 1991</div>
+                        <p>Offers crucial insights into how critical reflection and perspective transformation occur through educational engagement, particularly relevant for adults navigating major life transitions.</p>
+                    </div>
+                    <div class="theory-card">
+                        <div class="theory-title">Critical Resilience</div>
+                        <div class="theory-author">Bottrell, 2009</div>
+                        <p>Reframes resilience not as individual adaptation to adverse circumstances, but as resistance to systems that create adversity in the first place.</p>
+                    </div>
+                    <div class="theory-card">
+                        <div class="theory-title">Desistance Theory</div>
+                        <div class="theory-author">Maruna, 2001</div>
+                        <p>Examines narrative identity reconstruction processes that align closely with this study's focus on meaning-making and self-authorship.</p>
+                    </div>
+                    <div class="theory-card">
+                        <div class="theory-title">Intersectionality</div>
+                        <div class="theory-author">Crenshaw, 1989</div>
+                        <p>Provides essential analytical tools for understanding how multiple marginalized identities compound educational barriers and inform resilience strategies.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Integration:</strong> This theoretical constellation moves beyond individual-focused resilience models to examine how educational resilience develops in response to structural inequalities. The integration of Critical Resilience Theory is particularly important, as it reframes resilience not as individual adaptation to adverse circumstances, but as resistance to systems that create adversity in the first place.
+                </div>
+
+                <p>The study contributes to conversations across adult learning theory, critical criminology, and higher education reform by positioning education as simultaneously a site of healing and resistance, personal transformation and social critique.</p>
+            </section>
+
+            <section id="methodology" class="section">
+                <div class="section-header">
+                    <div class="section-number">4</div>
+                    <h2 class="section-title">Methodology</h2>
+                </div>
+
+                <p>This dissertation employs a dual qualitative methodology, combining autoethnography with phenomenological research to create a comprehensive framework for understanding educational meaning-making in post-incarceration contexts.</p>
+
+                <div class="methodology-grid">
+                    <div class="method-card">
+                        <div class="method-title">Autoethnography (Lead Method)</div>
+                        <p><strong>Framework:</strong> Chang's (2008) systematic approach to autoethnographic inquiry</p>
+                        <p><strong>Data Collection:</strong> Systematic review of personal documents, culture grams to map social and institutional contexts, structured self-reflective writing exercises</p>
+                        <p><strong>Focus:</strong> My own journey through incarceration, reentry, and educational transformation</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-title">Phenomenological Research</div>
+                        <p><strong>Framework:</strong> Moustakas's (1994) transcendental phenomenology</p>
+                        <p><strong>Participants:</strong> 6-10 formerly incarcerated individuals pursuing or having completed higher education</p>
+                        <p><strong>Method:</strong> In-depth semi-structured interviews exploring lived experiences of educational engagement</p>
+                    </div>
+                </div>
+
+                <div class="expandable-section">
+                    <div class="expandable-header" onclick="toggleExpand(this)">
+                        <strong>Detailed Methodological Framework</strong>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <h4>Chang's Autoethnographic Framework</h4>
+                        <p>Chang's emphasis on the connection between self, other, and culture provides the methodological foundation for transforming personal experience into rigorous scholarly analysis. Her framework ensures that the autoethnographic work moves beyond mere personal storytelling to examine how individual experiences reflect broader cultural and systemic dynamics affecting formerly incarcerated learners.</p>
+                        
+                        <p>This study employs what Ellis, Adams, and Bochner (2011) classify as personal narrative autoethnography, writing evocative narratives specifically focused on my academic, research, and personal life as it intersects with post-incarceration educational experiences.</p>
+
+                        <h4>Phenomenological Interview Process</h4>
+                        <p>The phenomenological component will explore participants' lived experiences of educational engagement, focusing on:</p>
+                        <ul>
+                            <li>Moments of meaning-making</li>
+                            <li>Barrier navigation strategies</li>
+                            <li>Identity reconstruction processes</li>
+                            <li>Educational transformation experiences</li>
+                        </ul>
+
+                        <h4>Data Analysis Strategy</h4>
+                        <p>Data analysis will employ Saldaña's (2016) coding methods across both autoethnographic and phenomenological data:</p>
+                        <ul>
+                            <li><strong>In Vivo coding:</strong> Preserve participants' own language</li>
+                            <li><strong>Process coding:</strong> Capture dynamic meaning-making activities</li>
+                            <li><strong>Values coding:</strong> Identify underlying belief systems and motivations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote-box">
+                    The choice of autoethnography aligns with the study's commitment to disrupting traditional power dynamics in academic research, particularly those that position formerly incarcerated individuals as objects of study rather than knowledge producers.
+                </div>
+
+                <p>As Ellis, Adams, and Bochner (2011) note, autoethnography treats "research as a political, socially-just and socially-conscious act" that challenges conventional ways of representing others. By foregrounding my own narrative through Chang's systematic approach, the methodology challenges deficit-based approaches to justice-impacted populations while modeling the kind of self-authorship that educational transformation can facilitate.</p>
+
+                <div class="highlight-box">
+                    <strong>Methodological Strength:</strong> The combined methodology enables triangulation between self-narrative and peer insight, producing a textured understanding of how education functions as both personal catalyst and social intervention in post-incarceration contexts.
+                </div>
+            </section>
+
+            <section id="feasibility" class="section">
+                <div class="section-header">
+                    <div class="section-number">5</div>
+                    <h2 class="section-title">Feasibility of the Project</h2>
+                </div>
+
+                <p>This study is fully feasible within my current professional and geographic context, with multiple access points for participant recruitment and data collection.</p>
+
+                <div class="methodology-grid">
+                    <div class="method-card">
+                        <div class="method-title">Participant Recruitment</div>
+                        <p><strong>Networks:</strong> Established professional and personal networks, community connections</p>
+                        <p><strong>Access:</strong> Professional role in higher education administration provides direct access</p>
+                        <p><strong>Trust-building:</strong> Identity as formerly incarcerated scholar facilitates trust with potential participants</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-title">Geographic Flexibility</div>
+                        <p><strong>Local focus:</strong> Initial recruitment through local networks</p>
+                        <p><strong>Virtual expansion:</strong> Interviews can be conducted virtually to expand participant pool</p>
+                        <p><strong>Accessibility:</strong> Accommodates scheduling constraints common among working adult learners</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Methodological Readiness:</strong> I possess the necessary qualitative research training to execute both autoethnographic and phenomenological approaches effectively. Access to transcription software, qualitative analysis programs, and ongoing mentorship support through my doctoral committee ensures adequate technical and scholarly resources.
+                </div>
+
+                <p>The study requires no specialized archival materials, foreign language competencies, or extensive travel, making it manageable within typical doctoral timelines and budgets.</p>
+
+                <div class="expandable-section">
+                    <div class="expandable-header" onclick="toggleExpand(this)">
+                        <strong>Ethical Considerations</strong>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <p>Ethical considerations, while complex given the sensitive nature of incarceration experiences, are addressable through established IRB protocols for research with formerly incarcerated populations. My shared identity with participants creates unique ethical responsibilities but also provides insights into appropriate consent processes, interview protocols, and data protection measures.</p>
+                        
+                        <p>The study's scope—combining personal narrative with 6-10 interviews—is appropriately sized for dissertation-length analysis while remaining manageable for a single researcher with other professional obligations.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="attractiveness" class="section">
+                <div class="section-header">
+                    <div class="section-number">6</div>
+                    <h2 class="section-title">Attractiveness of the Project</h2>
+                </div>
+
+                <p>This project represents a convergence of personal mission, professional development, and scholarly contribution that positions it as both intellectually compelling and career-defining work.</p>
+
+                <div class="methodology-grid">
+                    <div class="method-card">
+                        <div class="method-title">Personal Investment</div>
+                        <p>As a formerly incarcerated scholar and current higher education administrator, I bring lived expertise to subject matter that is often studied from external perspectives, creating opportunities for insights that traditional researcher-subject relationships cannot generate.</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-title">Professional Impact</div>
+                        <p>The project positions me to make significant contributions to justice-impacted student support services, education policy reform, and academic scholarship at the intersection of criminology and higher education.</p>
+                    </div>
+                </div>
+
+                <div class="quote-box">
+                    This personal investment ensures sustained motivation throughout the extended dissertation process while contributing to broader conversations about whose voices count in academic knowledge production.
+                </div>
+
+                <div class="expandable-section">
+                    <div class="expandable-header" onclick="toggleExpand(this)">
+                        <strong>Publication and Impact Potential</strong>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <h4>Academic Publications</h4>
+                        <ul>
+                            <li>Peer-reviewed journals in adult education and critical criminology</li>
+                            <li>Practitioner-focused publications in student affairs and reentry services</li>
+                            <li>Special issues on justice-impacted students in higher education</li>
+                        </ul>
+
+                        <h4>Broader Impact</h4>
+                        <ul>
+                            <li>Memoir project reaching broader audiences</li>
+                            <li>Public discourse about reentry experiences and educational transformation</li>
+                            <li>Policy advocacy and institutional change efforts</li>
+                        </ul>
+
+                        <h4>Professional Development</h4>
+                        <p>The research will enhance my capacity to mentor other justice-impacted individuals by providing deeper theoretical understanding of the educational transformation processes I've experienced personally. The study's findings will directly inform my work in student affairs, providing evidence-based insights for program development.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Career Foundation:</strong> Beyond immediate outcomes, this project establishes a foundation for sustained scholarly engagement with questions of educational access, systemic inequality, and transformative learning that will inform my entire career trajectory.
+                </div>
+            </section>
+
+            <section id="ethics" class="section">
+                <div class="section-header">
+                    <div class="section-number">7</div>
+                    <h2 class="section-title">Methodological Considerations and Ethical Framework</h2>
+                </div>
+
+                <div class="expandable-section">
+                    <div class="expandable-header" onclick="toggleExpand(this)">
+                        <strong>Relational Ethics</strong>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <p>Following Ellis, Adams, and Bochner's (2011) emphasis on relational ethics, this study acknowledges that autoethnographic research inherently implicates others in the researcher's narrative. When I write about my educational journey, family members, mentors, fellow students, and institutional representatives become part of the story, even when not explicitly named.</p>
+                        
+                        <h4>Ethical Strategies</h4>
+                        <ol>
+                            <li>Sharing relevant portions of the autoethnographic narrative with key individuals mentioned in my story</li>
+                            <li>Using protective measures such as altering identifying characteristics when necessary</li>
+                            <li>Being transparent about my dual role as researcher and subject</li>
+                            <li>Acknowledging that relationships may be affected by what I choose to reveal or analyze</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="expandable-section">
+                    <div class="expandable-header" onclick="toggleExpand(this)">
+                        <strong>Validity and Trustworthiness in Autoethnographic Research</strong>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <p>Traditional concepts of reliability, validity, and generalizability require reframing within autoethnographic methodology. As Ellis, Adams, and Bochner (2011) explain, autoethnographers value "narrative truth based on what a story of experience does—how it is used, understood, and responded to for and by us and others."</p>
+                        
+                        <h4>Validity Measures</h4>
+                        <ul>
+                            <li><strong>Authenticity:</strong> Whether the experiences described feel lifelike, believable, and possible to readers</li>
+                            <li><strong>Credibility:</strong> Systematic documentation using Chang's methods</li>
+                            <li><strong>Triangulation:</strong> With phenomenological data from other participants</li>
+                            <li><strong>Transparency:</strong> About the subjective nature of memory and interpretation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="expandable-section">
+                    <div class="expandable-header" onclick="toggleExpand(this)">
+                        <strong>Addressing Potential Criticisms</strong>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <p>Autoethnography faces common criticisms including concerns about academic rigor, accusations of "navel-gazing narcissism," and questions about analytical depth. This study addresses these concerns by:</p>
+                        
+                        <ol>
+                            <li>Employing Chang's systematic analytical framework that moves beyond personal storytelling</li>
+                            <li>Combining autoethnographic data with phenomenological interviews</li>
+                            <li>Grounding personal experience in established theoretical frameworks</li>
+                            <li>Using rigorous coding methods to identify patterns and themes</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section id="bibliography" class="section">
+                <div class="section-header">
+                    <div class="section-number">8</div>
+                    <h2 class="section-title">Selective Bibliography</h2>
+                </div>
+
+                <p>The following bibliography represents the foundational sources that will guide this study's theoretical framework, methodological approach, and analytical lens. These works span multiple disciplinary boundaries, reflecting the interdisciplinary nature of research at the intersection of criminal justice, higher education, and transformative learning theory.</p>
+
+                <div class="biblio-category">
+                    <div class="biblio-title">Primary Sources</div>
+                    <div class="biblio-item">
+                        <div class="citation"><strong>Autoethnographic narrative materials</strong> from the researcher including personal documents, reflective writings, and critical incident analyses from incarceration through educational reintegration.</div>
+                        <div class="citation-note">These materials will be systematically analyzed as primary data sources rather than mere background information.</div>
+                    </div>
+                    <div class="biblio-item">
+                        <div class="citation"><strong>Semi-structured interview transcripts</strong> from 6-10 formerly incarcerated individuals currently pursuing or having completed higher education programs.</div>
+                        <div class="citation-note">Participants will represent diverse educational pathways, demographic backgrounds, and reintegration experiences to ensure analytical depth and transferability.</div>
+                    </div>
+                </div>
+
+                <div class="biblio-category">
+                    <div class="biblio-title">Core Theoretical Sources</div>
+                    <div class="biblio-item">
+                        <div class="citation">Luthar, S., Cicchetti, D., & Becker, B. (2000). <em>The resilience construct: A critical evaluation and guidelines for future work</em>.</div>
+                        <div class="citation-note">This foundational work in resilience theory provides the conceptual framework for understanding how protective factors and adaptive processes operate in post-incarceration contexts.</div>
+                    </div>
+                    <div class="biblio-item">
+                        <div class="citation">Mezirow, J. (1991). <em>Transformative Dimensions of Adult Learning</em>.</div>
+                        <div class="citation-note">Mezirow's transformative learning theory offers crucial insights into how critical reflection and perspective transformation occur through educational engagement, particularly relevant for adults navigating major life transitions.</div>
+                    </div>
+                    <div class="biblio-item">
+                        <div class="citation">Maruna, S. (2001). <em>Making Good: How Ex-Convicts Reform and Rebuild Their Lives</em>.</div>
+                        <div class="citation-note">This seminal work in desistance theory examines narrative identity reconstruction processes that align closely with this study's focus on meaning-making and self-authorship.</div>
+                    </div>
+                    <div class="biblio-item">
+                        <div class="citation">Crenshaw, K. (1989). <em>Demarginalizing the intersection of race and sex: A black feminist critique of antidiscrimination doctrine</em>.</div>
+                        <div class="citation-note">Intersectionality theory provides essential analytical tools for understanding how multiple marginalized identities compound educational barriers and inform resilience strategies.</div>
+                    </div>
+                    <div class="biblio-item">
+                        <div class="citation">Bottrell, D. (2009). <em>Understanding 'marginal' education: The role of social frameworks, embedding and agency</em>.</div>
+                        <div class="citation-note">Critical resilience theory reframes individual adaptation as resistance to structural inequalities, offering a more politicized understanding of educational persistence.</div>
+                    </div>
+                </div>
+
+                <div class="biblio-category">
+                    <div class="biblio-title">Methodological Sources</div>
+                    <div class="biblio-item">
+                        <div class="citation">Chang, H. (2008). <em>Autoethnography as Method (Developing Qualitative Inquiry)</em>.</div>
+                        <div class="citation-note">This comprehensive guide provides systematic approaches to autoethnographic data collection, analysis, and interpretation, with particular emphasis on connecting personal experience to broader cultural understanding.</div>
+                    </div>
+                    <div class="biblio-item">
+                        <div class="citation">Ellis, C., Adams, T. E., & Bochner, A. P. (2011). <em>Autoethnography: An overview</em>.</div>
+                        <div class="citation-note">This foundational work establishes autoethnography as both process and product, addressing critical methodological considerations including relational ethics, forms of autoethnographic inquiry, and responses to validity concerns.</div>
+                    </div>
+                    <div class="biblio-item">
+                        <div class="citation">Moustakas, C. (1994). <em>Phenomenological Research Methods</em>.</div>
+                        <div class="citation-note">This text provides the methodological foundation for the phenomenological component of the study, particularly the modified van Kaam method for analyzing interview data.</div>
+                    </div>
+                    <div class="biblio-item">
+                        <div class="citation">Saldaña, J. (2016). <em>The Coding Manual for Qualitative Researchers</em>.</div>
+                        <div class="citation-note">This resource provides specific coding strategies that will be employed in data analysis, particularly In Vivo, Process, and Values coding approaches.</div>
+                    </div>
+                </div>
+
+                <div class="biblio-category">
+                    <div class="biblio-title">Related Literature on Education and Reintegration</div>
+                    <div class="biblio-item">
+                        <div class="citation">Honeywell, M. (2018). <em>The learning experiences of prisoners engaged in distance learning higher education</em>.</div>
+                        <div class="citation-note">This study examines transformative learning processes among incarcerated students, providing important context for post-release educational experiences.</div>
+                    </div>
+                    <div class="biblio-item">
+                        <div class="citation">Runell, M. (2021). <em>Students with criminal justice contact in postsecondary education</em>.</div>
+                        <div class="citation-note">This work explores institutional barriers and support strategies for justice-impacted students, informing both theoretical framework and practical applications.</div>
+                    </div>
+                    <div class="biblio-item">
+                        <div class="citation">Western, B. (2018). <em>Homeward: Life in the Year After Prison</em>.</div>
+                        <div class="citation-note">This longitudinal study of reentry experiences provides crucial context for understanding the broader challenges within which educational pursuits occur.</div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>[TO BE EXPANDED: Empirical Studies Section]</strong><br>
+                    This section will be significantly expanded to include:
+                    <ul style="margin-top: 10px;">
+                        <li>Quantitative studies measuring outcomes for formerly incarcerated students</li>
+                        <li>Deficit-model research focusing on barriers and challenges</li>
+                        <li>Program effectiveness evaluations</li>
+                        <li>Traditional researcher-subject studies</li>
+                    </ul>
+                    This bibliography will continue to evolve throughout the research process, with particular attention to emerging scholarship by formerly incarcerated scholars whose work is increasingly shaping academic discourse in this field.
+                </div>
+            </section>
+
+            <section id="timeline" class="section">
+                <div class="section-header">
+                    <div class="section-number">9</div>
+                    <h2 class="section-title">Implementation Timeline</h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong>Literature Review Expansion</strong><br>
+                        Complete by mid-August 2025
+                        <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+                        <p style="margin-top: 10px; font-size: 0.9em; color: #6c757d;">Focus on empirical studies, quantitative research, and deficit-model approaches to establish scholarly gaps.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Proposal Defense</strong><br>
+                        Beginning of Fall 2025
+                        <div class="progress-bar"><div class="progress-fill" style="width: 30%"></div></div>
+                        <p style="margin-top: 10px; font-size: 0.9em; color: #6c757d;">Committee review and approval of methodology, theoretical framework, and research design.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>IRB Approval & Participant Recruitment</strong><br>
+                        Fall 2025
+                        <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                        <p style="margin-top: 10px; font-size: 0.9em; color: #6c757d;">Ethics approval and recruitment of 6-10 formerly incarcerated participants through professional networks.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Data Collection</strong><br>
+                        Fall 2025 through Spring 2026
+                        <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                        <p style="margin-top: 10px; font-size: 0.9em; color: #6c757d;">Autoethnographic data gathering and phenomenological interviews with participants.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Analysis and Writing</strong><br>
+                        Spring 2026
+                        <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                        <p style="margin-top: 10px; font-size: 0.9em; color: #6c757d;">Data analysis using Saldaña's coding methods and dissertation writing.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Final Defense</strong><br>
+                        End of Spring 2026
+                        <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                        <p style="margin-top: 10px; font-size: 0.9em; color: #6c757d;">Dissertation defense and completion of doctoral degree requirements.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="interactive-note">
+                💡 This prospectus is available in multiple formats. Traditional PDF version available upon request. Committee feedback and revisions will be integrated iteratively throughout the review process.
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    // Update active state
+                    document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Expandable sections
+        function toggleExpand(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.expand-icon');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.classList.remove('rotated');
+                icon.textContent = '▼';
+            } else {
+                content.classList.add('active');
+                icon.classList.add('rotated');
+                icon.textContent = '▲';
+            }
+        }
+
+        // Interactive elements
+        document.querySelectorAll('.interactive-note').forEach(note => {
+            note.addEventListener('click', function() {
+                this.style.background = '#c8e6c9';
+                this.innerHTML += ' ✓ Noted for committee discussion';
+                setTimeout(() => {
+                    this.style.background = '#e3f2fd';
+                }, 2000);
+            });
+        });
+
+        // Progress animation on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-fill');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 300);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline').forEach(timeline => {
+            observer.observe(timeline);
+        });
+
+        // Scroll-based navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Print functionality
+        function printPDF() {
+            window.print();
+        }
+
+        // Add print styles
+        const printStyles = `
+            @media print {
+                .sidebar { display: none; }
+                .container { grid-template-columns: 1fr; }
+                .expandable-content { display: block !important; }
+                .hero-section { background: #2c5aa0 !important; -webkit-print-color-adjust: exact; }
+            }
+        `;
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = printStyles;
+        document.head.appendChild(styleSheet);
+    </script>
+</body>
+</html>
